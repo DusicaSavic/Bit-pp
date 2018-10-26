@@ -3,7 +3,7 @@
     this.id = Math.floor(Math.random() * 99000 + 10000);
     this.name = name;
     this.price = price.toFixed(2);
-    this.expirationDate = expirationDate;
+    this.expirationDate = new Date(expirationDate);
 
     this.GetInfo = function() {
       var letter;
@@ -17,13 +17,11 @@
     this.listOfProducts = [];
 
     var date = new Date();
-    var date1;
-    for (i = 0; i < this.listOfProducts.length; i++) {
-      date1 = this.listOfProducts[i].expirationDate;
-    }
 
     this.addProduct = function(product) {
-      this.listOfProducts.push(product);
+      if (product.expirationDate > date) {
+        this.listOfProducts.push(product);
+      }
     };
 
     this.averagePrice = function() {
@@ -100,5 +98,5 @@
   MaxiBag.addProduct(Jabuka);
 
   console.log(MaxiBag.totalPrice());
-  console.log(CheckOutAndBuy(card, MaxiBag));
+  console.log(Banana.GetInfo());
 })();
