@@ -1,0 +1,33 @@
+{
+    "airport": {
+        "name": "Nikola Tesla",
+        "listOfFlight": [
+            {
+                "relation": "Beograd-Madrid",
+                "date": "2018-11-16",
+                "listOfPassenger": [
+                    {
+                        "person": {
+                            "name": "Misa",
+                            "surname": "Misic"
+                        },
+                        "seat": {
+                            "number": 15,
+                            "category": "bussinnes"
+                        }
+                    },
+                    {
+                        "person": {
+                            "name": "Mira",
+                            "surname": "Glisic"
+                        },
+                        "seat": {
+                            "number": 15,
+                            "category": "bussinnes"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

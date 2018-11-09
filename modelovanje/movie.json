@@ -1,0 +1,22 @@
+{
+    "festival": {
+        "name": "Exit",
+        "list of programs": [
+            {
+                "program": {
+                    "date": "2018-12-06",
+                    "list of movies": [
+                        {
+                            "title": "Bambi",
+                            "genre": {
+                                "name": "comedy"
+                            },
+                            "length": 120
+                        }
+                    ],
+                    "total num of movies": 230
+                }
+            }
+        ]
+    }
+}

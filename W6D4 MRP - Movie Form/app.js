@@ -1,6 +1,6 @@
-var dataModule = (function () {
+let dataModule = (function () {
 
-    var storage = {
+    const storage = {
         movies: []
     };
 
@@ -12,7 +12,7 @@ var dataModule = (function () {
     }
 
     Movie.prototype.getData = function () {
-        return this.title.concat(', ', this.length, ', ', this.genre);
+        return `${this.title}, ${this.length}, ${this.genre}`;
     }
 
     function createMovie(title, length, genre) {
@@ -25,11 +25,11 @@ var dataModule = (function () {
 
     function allMoviesLength() {
 
-        var lengthOfAllMovies = 0;
+        let lengthOfAllMovies = 0;
 
-        for (var i = 0; i < storage.movies.length; i++) {
-            var movie = storage.movies[i];
-            var movieLength = parseInt(movie.length);
+        for (let i = 0; i < storage.movies.length; i++) {
+            let movie = storage.movies[i];
+            let movieLength = parseInt(movie.length);
             lengthOfAllMovies += movieLength;
         }
 
@@ -45,13 +45,13 @@ var dataModule = (function () {
 
 })();
 
-var uiModule = (function () {
+let uiModule = (function () {
 
-    var $titleInput = document.querySelector('.title-content');
-    var $lengthInput = document.querySelector('.length-content');
-    var $genreInput = document.querySelector('.genre-select');
-    var $movieList = document.querySelector('.movie-list');
-    var $movieForm = document.querySelector('.movie-form');
+    const $titleInput = document.querySelector('.title-content');
+    const $lengthInput = document.querySelector('.length-content');
+    const $genreInput = document.querySelector('.genre-select');
+    const $movieList = document.querySelector('.movie-list');
+    const $movieForm = document.querySelector('.movie-form');
 
 
     var $ul = document.createElement('ul');

@@ -1,9 +1,9 @@
-(function() {
+(function () {
   function Genre(name) {
     this.name = name;
-    this.getData = function() {
+    this.getData = function () {
       return (
-        this.name[0].toUpperCase() + this.name[name.length - 1].toUpperCase()
+        `${this.name[0].toUpperCase()} ${this.name[name.length - 1].toUpperCase()}`
       );
     };
   }
@@ -13,9 +13,11 @@
     this.genre = new Genre(genre);
     this.length = length; //ToDo: length
 
-    this.getData = function() {
+    this.getData = function () {
       return (
-        this.title + ", " + this.length + ", " + this.genre.getData() + "\n"
+        `${this.title},
+         ${this.length}, 
+         ${this.genre.getData()} `
       );
     };
   }
@@ -24,38 +26,40 @@
     this.listOfMovie = [];
     this.date = date;
     this.totalNumberOfMovies = 0;
-    this.addMovie = function(movie) {
+    this.addMovie = function (movie) {
       this.listOfMovie.push(movie);
       this.totalNumberOfMovies++;
     };
 
-    this.getData = function() {
-      var sum = 0;
+    this.getData = function () {
+      let sum = 0;
       for (i = 0; i < this.listOfMovie.length; i++) {
         sum += this.listOfMovie[i].length;
       }
-      var movieInfo = "";
+      let movieInfo = "";
       for (i = 0; i < this.listOfMovie.length; i++) {
         movieInfo += this.listOfMovie[i].getData();
       }
 
-      return this.date + ", " + "Program Duration  " + sum + "\n" + movieInfo;
+      return `${this.date},
+               Program Duration ${sum},
+              ${ movieInfo}`;
     };
   }
 
   function Festival(name) {
     this.name = name;
     this.listOfPrograms = [];
-    this.addProgram = function(program) {
+    this.addProgram = function (program) {
       this.listOfPrograms.push(program);
     };
-    this.getData = function() {
-      var sum1 = 0;
-      var programInfo = "";
-      for (var i = 0; i < this.listOfPrograms.length; i++) {
+    this.getData = function () {
+      let sum1 = 0;
+      let programInfo = "";
+      for (let i = 0; i < this.listOfPrograms.length; i++) {
         sum1 += this.listOfPrograms[i].totalNumberOfMovies;
       }
-      for (var i = 0; i < this.listOfPrograms.length; i++) {
+      for (let i = 0; i < this.listOfPrograms.length; i++) {
         programInfo += this.listOfPrograms[i].getData();
       }
 
@@ -73,15 +77,15 @@
   }
 
   // ToDo --> cableGuy
-  var CableGuy = CreateMovie("CableGuy", "Comedy", 90);
-  var Comedy = CreateProgram("10/10/2019");
+  const CableGuy = CreateMovie("CableGuy", "Comedy", 90);
+  const Comedy = CreateProgram("10/10/2019");
 
-  var Prisoners = new Movie("Prisoners", "thriller", 130);
-  var GetOut = new Movie("Get Out", "Horror", 120);
-  var GreenMile = new Movie("Green Mile", "Drama", 140);
-  var Action = new Program("12/12/2018");
-  var Horror = new Program("12/12/2019");
-  var CanFest = new Festival("Can Fest");
+  const Prisoners = new Movie("Prisoners", "thriller", 130);
+  const GetOut = new Movie("Get Out", "Horror", 120);
+  const GreenMile = new Movie("Green Mile", "Drama", 140);
+  const Action = new Program("12/12/2018");
+  const Horror = new Program("12/12/2019");
+  const CanFest = new Festival("Can Fest");
 
   Comedy.addMovie(CableGuy);
   Action.addMovie(Prisoners);
