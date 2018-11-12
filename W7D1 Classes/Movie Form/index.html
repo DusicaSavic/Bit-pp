@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie festival-homework</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>Movie Festival</h1>
+    <form class="container movie-form" action="./action-page.php" method="GET">
+        <p>Please feel in the form</p>
+        <p>Movie</p>
+        <div class="movie">
+
+            <div class="input">
+                <p>Title</p>
+                <input type="text" class="title-content" placeholder="Title">
+            </div>
+            <div class="input">
+                <p>Length (min)</p>
+                <input type="number" class="length-content" placeholder="Movie length in min">
+            </div>
+            <select class="genre-select" name='genre-select'>
+                <option value="">-</option>
+                <option value="action">Action</option>
+                <option value="drama">Drama</option>
+                <option value="comedy">Comedy</option>
+            </select>
+            <div class="error-message"></div>
+            <div>
+                <input type="button" value="Create movie" class="movie-button">
+            </div>
+
+            <div>
+                <ul class="movie-list"></ul>
+            </div>
+
+        </div>
+        <div class="total-length"></div>
+    </form>
+
+    <script src="./app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            console.log("DOM fully loaded and parsed");
+            console.log("Init app");
+            controller.init()
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    display: inline-block;
+    border-bottom: 2px solid black;
+}
+
+.container {
+    margin: 0 auto;
+    width: 600px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+
+.todo {
+    padding: 10px;
+    border: 1px solid black;
+    width: 100%;
+    margin: 0 auto 20px;
+}
+
+.input {
+    display: flex;
+}
+
+input.new-task{
+    flex: 3;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.add-button{
+    background-color: red;
+    padding: 10px;
+    color: white;
+    border: none;
+    flex: 1;
+}
